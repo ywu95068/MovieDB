@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="/static/index.css" type="text/css">
+
+</head>
+<body>
+
+<div class="title">
+<h1>&nbsp;&nbsp;&nbsp;THE MOVIE DB</h1></div>
+
+
+    <div class="bar" id="bar">
+        <div class="bars">
+        <div id="home" >
+          <div onClick="click_home();" class="btxt" >&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rarr;</div>
+        </div>
+        <div id="search" >
+            <div class="btxt" onClick="click_search()" >&nbsp;&nbsp;Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&rarr;</div>
+        </div>
+        </div>
+    </div>
+<div class="the_c">
+    <div class="contents" id="homeCont">
+        <div class="showlist" id="movie">
+            <div class="toptxt">Trending Movies</div>
+            <div class="poscontrol" id="moviepic">
+            <span class="buttontxt" id="movietxt"></span>
+            </div>
+        </div>
+        <div class="showlist" id="tvshow">
+            <div class="toptxt">TV Shows On-Air Today</div>
+            <div class="poscontrol" id="tvshowpic">
+            <span class="buttontxt" id="tvshowtxt"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="contents" id="searchCont">
+        <div class="searchbox" id="searchbox">
+            <div class="searchexcel" id="searchexcel">
+                <span class="searchtxt">Search</span>
+                <form id="searchform" onsubmit="return submit_search(get_tv_genres)">
+
+                    <table>
+                    <tr align="left"><td >Keyword<span style="color: red;font-weight:bold">*</span>&nbsp;&nbsp; <input type="text" id="keyword" ></td></tr>
+                    <tr align="left"><td >Category<span style="color: red;font-weight:bold">*</span>&nbsp;&nbsp; <select id="category">
+                        <option value="0"> </option>
+                        <option value="movie">Movies</option>
+                        <option value="tv">TV Shows</option>
+                        <option value="multi">Movies and TV Shows</option>
+                    </select></td></tr>
+                    <tr align="center" ><td ><input type="submit" id="submit" value="Search" >
+                        <input type="reset" id="reset" value="Clear" onclick="click_clear()"></td></tr>
+                    </table>
+                </form>>
+            </div>
+        </div>
+        <p id="showresults">Showing results...</p>
+        <p id="noresult" >No results found</p>
+        <div class="results" id="results">
+
+            <!--div class="result">
+                <div class="resultpic"><img   width="130px" height="200px"> </div>
+                <div class="resultdetail">
+                <h2 class="resultitle">Avengers</h2>
+                <p class="timeandcate">2019&nbsp;|&nbsp;Science<br>
+                    <span class="score">&#9733</span>
+                    <span class="score">4.5&nbsp;</span>
+                    <span class="nopeople">1000 </span>
+                    <span class="nopeople">votes</span><br><br>
+                </p>
+                <p class="resultcontent">The Search and Clear buttons should have their background color as black and text color as white. When we hover over either of these buttons, the background should change to a share of red (as shown in the image).The Search and Clear buttons should have their background color as black and text color as white. When we hover over either of these buttons, the background should change to a share of red (as shown in the image).</p>
+                <button class="showbutton">Show more&nbsp;</button>
+                </div>
+            </div-->
+
+        </div>
+
+    </div>
+     <div class="buttomred" id="buttomred">
+            <div class="bcon"><br>Designed and developed by Yue Wu&nbsp;&nbsp;<br>Powered by TMDB&nbsp;&nbsp;</div>
+        </div>
+</div>
+<div id="subwindow" class="black_overlay">
+        <div id="close" class="white_content">
+            <button class="close_tab" onclick = "close_window()">&times;</button>
+            <div id="video_detail">
+                <div id="video_pic"></div>
+                <div id="video_detail_title">
+                    <span id="the_title"></span>
+                    <span><a id="the_link" target="_blank" >&nbsp;&#x24D8;</a></span>
+                </div>
+                <p id="time_cate"></p>
+                <p>
+                    <span class="detail_score">&#9733<span id="detail_score"></span>/5</span>
+                    <span class="detail_nopeople"><span id="detail_nopeople"></span>&nbsp;votes</span><br><br>
+                </p>
+                <p id="detail_content">
+                </p>
+                <i class="detail_language">Spoken languages: <span id="detail_language"></span></i>
+                <h2 class="sub_title" id="cast_title">Cast</h2>
+                <div id="cast_list">
+                    <!--div class="cast" >
+
+                        <div class="cast_info">
+                            <span class="cast_name">Benedict<br></span>
+                            <span class="role_name">AS<br>Stephen</span>
+                        </div>
+                    </div-->
+                </div>
+                <h2 class="sub_title" id="review_title">Reviews</h2>
+                <div class="reviews" id="reviews">
+                    <!--div class="review">
+                        <div class="review_basic">
+                            <span class="reviewer">Frank</span>
+                            <span class="review_date">on</span>
+                            <span class="review_date">11/03/2016</span><br>
+                        </div>
+                        <div class="review_detail">
+                            <span class="review_score">&#9733 4.5/5</span><br>
+                            <span class="review_content">
+                            "Gal Gadot returns as Diana Prince in “Wonder Woman 1984” which has seen its release date shift a few times due to the Covid-19 pandemic. The film has started to open overseas and will arrive in the U.S. on Christmas day with a limited debut on HBO Max as well.\r\n\r\nThe story sees Diana now living in Washington D.C. in 1984. Diana is popular but has refused male companionship as she still longs for her late love Steve Trevor (Chris Pine).\r\n\r\nDiana works in the Smithsonian Institute in antiquities and keeps her secret identity under wraps even when a daring mall heist forces her to leap into action.\r\n\r\nA shy and passive employee named Barbara (Kirsten Wiig); who is afraid of her own shadow and largely ignored by her peers is befriended by Diana and they discover one item from the heist is inscribed with the ability to grant a wish. Unknowingly Diana wishes for Steve to return and Barbara wishes to be more like Diana which sets a chain of events into motion.\r\n\r\nA shady business man named Maxwell Lord (Perdro Pascal) has his site on obtaining the relic as he believes having the ability to grant wishes will allow him to save his failing business and give him the power he craves.\r\n\r\nWith such a promising setup; the film ultimately does not deliver on its premise and becomes bogged down in drawn out sequences with surprisingly little action and gaps in logic that defy even standards for a comic book film.\r\n\r\nThe first 90 minutes of the film has roughly 10-15 minutes of action tops and we are instead given lengthy scenes of Steve trying to find an 80s fashion look; flying over fireworks, and Maxwell trashing from one locale to another without much needed continuity.\r\n\r\nAn action scene involving a convoy chase through the desert seems very inspired by “Raiders of the Lost Ark” and ultimately does not deliver especially with such a long gape between the action sequences.\r\n\r\nThe final act does attempt to redeem the film as seeing Barbara transform into her new persona is interesting and Wiig does a very solid job with the role. This sadly is undermined with a single line of dialogue which takes away a big part of the transformation that audiences deserved to see.\r\n\r\nThere was also a sequence where Diana races down the streets and takes to flight with her Lasso and then discovers she can fly like Superman. Not only is this not in keeping with the character; but we see this extended fast moving sequence where she is clearly heading away from D.C. at great speed only to arrive at a destination with an item which had been established to be back at her home in D.C.  It is this sort of sloppiness that really detracts from the film. There is also the fact that Steve has to fly her around on a jet that even as a pilot he should not know how to fly as he has never flown a jet aircraft in his life.\r\n\r\nWhen the big confrontation comes it is a letdown as it is not overly epic and the CGI really does not seem to mesh. What is an even bigger disappointment is that a certain character stands emoting for several minutes while Diana gives such a bland and extended speech that even my wife had to ask “who wrote these lines”.\r\n\r\nThe film was not a total disaster as the characters were interesting and worked well with one another making the film entertaining in parts despite being really disappointed with it.\r\n\r\nThe film strikes me as a product of the talented Patty Jenkins being able to do whatever she wanted after the success of the first film. Jenkins not only Directed but did the screenplay for it. Considering the amazing job she did writing “Monster” I had high expectations for the film but to me it seemed like it could have used a bit more attention to several aspects.\r\n\r\nMy summary would be the following… good cast, entertaining in parts, not much action over two hours, takes huge liberties with Diana and her abilities, massive gaps in logic even for a comic movie. It aims to be epic and comes up lacking. At least the mid. credit scene was worth it.\r\n\r\n3 stars out of 5"
+                            </span>
+                        </div>
+                        <hr class="divider"/>
+                    </div-->
+                </div>
+            </div>
+        </div>
+        </div>
+<script type="text/javascript" language="javascript" src="/static/index.js"></script>
+</body>
+</html>
